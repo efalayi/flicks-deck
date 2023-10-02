@@ -21,13 +21,30 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest",
       "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "no-unused-vars": "error"
+    },
+    "overrides": [
+      {
+        "files": ["**/*.ts?(x)"],
+        "rules": {
+          "@typescript-eslint/no-unused-vars": "error"
+        }
+      }
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "eslint"
     ]
   },
   "browserslist": {
@@ -45,6 +62,8 @@
   "devDependencies": {
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "prettier": "3.0.3"
   }
 }
