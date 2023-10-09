@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 /* TO DO
-1. ESlint config
-2. Husky setup
 3. Tailwind setup (and/or styled components)
 4. Dark mode setup
 5. Fonts
